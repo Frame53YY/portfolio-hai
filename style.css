@@ -6,8 +6,9 @@
 
   --main-font-family: Rubik, sans-serif;
   --main-font-size: 18px;
-  --section-title-font-size: 36px;
-  --title-font-size: 20px;
+  --section-title-font-size: 40px;
+  --title-font-size: 32px;
+  --main-font-weight: 400;
 
   --main-cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -80,6 +81,7 @@ img {
 }
 
 .section {
+  padding: 80px 0;
 }
 
 .logo,
@@ -89,13 +91,18 @@ img {
   padding: 32px 0;
 }
 
-.section-title {
+.title {
+  font-weight: var(--main-font-weight);
+  font-size: var(--section-title-font-size);
+  margin-bottom: 60px;
 }
 
-.section-subtitle {
+.subtitle {
+  font-weight: var(--main-font-weight);
+  font-size: 46px;
 }
 
-.section-text {
+.text {
 }
 /* -------------------HEADER------------------------------- */
 
@@ -117,7 +124,7 @@ img {
 
 /* -------------------HERO------------------------------- */
 
-.hero {
+.hero-section {
   padding-top: 38px;
   padding-bottom: 100px;
 }
@@ -145,9 +152,8 @@ img {
 }
 
 .hero-title {
-  font-weight: 400;
-  font-size: 32px;
   margin-bottom: 20px;
+  font-size: var(--title-font-size);
 }
 
 .bold-text {
@@ -182,7 +188,6 @@ img {
 .soc-item {
 }
 .soc-link {
-  /* background-color: purple; */
   display: flex;
   width: 30px;
   height: 30px;
@@ -192,4 +197,62 @@ img {
 }
 .soc-icon {
   fill: #333;
+}
+
+/* -------------------INTRO------------------------------- */
+.intro-section .title {
+  font-size: var(--title-font-size);
+}
+/* -------------------SERVICES------------------------------- */
+.services-section .title {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.services-list-item {
+  width: 100%;
+  background-color: var(--secondary-bg-color);
+  padding: 68px 20px;
+  transition: color 250ms var(--main-cubic-bezier),
+    background-color 250ms var(--main-cubic-bezier);
+}
+
+.services-list-item .subtitle {
+  margin-bottom: 20px;
+}
+
+.services-list-item .text {
+  margin-bottom: 60px;
+}
+
+.services-link-wrap {
+  display: flex;
+}
+
+.services-list-link {
+  font-weight: 600;
+  color: var(--primary-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 24px;
+  transition: color 250ms var(--main-cubic-bezier),
+    fill 250ms var(--main-cubic-bezier);
+}
+
+.services-list-item:hover,
+.services-list-item:focus {
+  background-color: var(--primary-color);
+  color: var(--accent-text-color);
+}
+
+.services-list-item:hover .services-list-link,
+.services-list-item:focus .services-list-link {
+  color: var(--accent-text-color);
+  fill: var(--accent-text-color);
 }
