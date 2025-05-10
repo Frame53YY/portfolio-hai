@@ -211,12 +211,15 @@ img {
 
 .services-list {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 32px;
+  max-height: 1438px;
 }
 
 .services-list-item {
   width: 100%;
+  max-height: 458px;
   background-color: var(--secondary-bg-color);
   padding: 68px 20px;
   transition: color 250ms var(--main-cubic-bezier),
@@ -255,4 +258,56 @@ img {
 .services-list-item:focus .services-list-link {
   color: var(--accent-text-color);
   fill: var(--accent-text-color);
+}
+
+/* ---------------------SLIDER----------------------------- */
+
+.slider {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.slides {
+  column-gap: 20px;
+  display: flex;
+  transition: transform 0.4s ease;
+  user-select: none;
+  cursor: grab;
+  margin-bottom: 60px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  gap: 32px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: #333;
+  cursor: pointer;
+  transition: transform 250ms var(--main-cubic-bezier);
+}
+
+.dot.active {
+  transform: scale(1.66);
+  position: relative;
+}
+
+.dot.active::before {
+  padding: 0;
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
